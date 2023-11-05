@@ -1,9 +1,14 @@
+/*body style*/
 body {
+	display: flex;
+	flex-direction: column;
 	background-color: seashell;
 	font-family: "Verdana", sans-serif;
-	font-size: 18px;
+	font-size: 20px;
+	color: #144b6b;
 }
 
+/*header style*/
 header {
 	background-color: #42a2db;
 	border: 8px solid #144b6b;
@@ -12,30 +17,36 @@ header {
 	padding: 10px;
 }
 
+/*h1 style*/
 h1 {
 	font-size: 60px;
 	text-align: center;
 	margin-bottom: 10px;
 }
 
-.headerInfo {
+/*pokemon info page header information style*/
+.infoPageHeader {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
+/*h2 style*/
 h2 {
+	margin-right: 20px;
+	margin-left: 20px;
 	font-size: 24px;
 }
-
+/*legendary pokemon text style and hover animation*/
 .legendary {
-	margin-left: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
 	color: gold;
 	text-shadow: 4px 4px 2px #144b6b;
 	
 	transition-property: color;
-	transition-duration: 0.4s;
+	transition-duration: 0.3s;
 	transition-timing-function: ease-out;
 	transition-delay: now;
 }
@@ -44,15 +55,143 @@ h2 {
 	color: white;
 }
 
+/*navigation bar style*/
 nav {
-	background-color: seashell;
+	background-color: #144b6b;
+	border: 8px solid #42a2db;
+	border-radius: 20px;
 	margin-top: 20px;
 	padding: 20px;
 	font-size: 24px;
 }
 
-footer {
-	border-top: 8px solid #144b6b;
-	font-size: 16px;
+/*link styles in various states*/
+/*applies to both nav bar and menu links*/
+a:link {
+	color: gold;
+	text-decoration: none;
 }
 
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:active {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*generic menu style (homepage)*/
+menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 300px;
+	overflow: scroll;
+	
+	/*removing bullet points and indents from list items*/
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+/*list item style (homepage menu items)*/
+li {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/*link styles that apply only to menu item links*/
+a.menuItem {
+	background-color: #42a2db;
+	border: 8px solid #144b6b;
+	border-radius: 20px;
+	padding: 10px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+/*style for class that can be applied to any paragraph needing to be centered*/
+.centerParagraph {
+	text-align: center;
+}
+
+/*footer style*/
+footer {
+	border-top: 8px solid #144b6b;
+	font-size: 14px;
+}
+
+/*menu style for info pages*/
+.infoPageMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-right: 20px;
+	width: 340px;
+	border-bottom: 8px solid #144b6b;
+	position: relative;
+	height: 50px;
+	
+	transition: height 0.8s ease-out;
+}
+
+/*revealing info pages menu when it is hovered over*/
+.infoPageMenu:hover {
+	height: 300px;
+	
+	transition: height 0.8s ease-out;
+}
+
+.infoPageBody {
+	display: flex;
+	flex-direction: row;
+}
+
+.infoPageMain {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+
+table {
+	border: 4px solid #144b6b;
+	border-collapse: collapse;
+	margin: 10px;
+	margin-left: 0px;
+	width: 300px;
+	text-align: left;
+}
+
+tr:nth-child(2n-1) {
+	background-color: #42a2db;
+}
+
+th, td {
+	padding: 10px;
+}
+
+.infoPageMain p {
+	width: 600px;
+}
+
+img {
+	margin: 20px;
+	
+	animation: wobble 2s linear infinite;
+}
+
+@keyframes wobble {
+	0% {transform: rotateZ(0);}
+	8% {transform: rotateZ(-10deg);}
+	16% {transform: rotateZ(10deg);}
+	24%	{transform: rotateZ(0);}
+}
