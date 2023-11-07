@@ -2,7 +2,8 @@
 
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="Mobile Stylesheet" href="mobile.css" media="screen and (max-width: 480px)">
+		<link rel="Default Stylesheet" href="styles.css" media="screen and (min-width: 481px)">
 		<title>Charmander</title>
 	</head>
 	
@@ -30,7 +31,10 @@
 			</menu>
 			
 			<section>
-				<img src="images/charmanderLarge.png">
+				<picture>
+					<source media="(min-width: 481px)" srcset="images/charmanderLarge.png">
+					<img src="images/charmanderSmall.png">
+				</picture>
 			</section>
 			
 			<section class="infoPageMain">
