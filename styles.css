@@ -151,6 +151,7 @@ footer {
 	transition: height 0.8s ease-out;
 }
 
+/*Pokemon info page subsections style*/
 .infoPageBody {
 	display: flex;
 	flex-direction: row;
@@ -162,6 +163,7 @@ footer {
 	margin: 20px;
 }
 
+/*Pokemon stats table border and background style*/
 table {
 	border: 4px solid #144b6b;
 	border-collapse: collapse;
@@ -179,16 +181,19 @@ th, td {
 	padding: 10px;
 }
 
+/*Pokemon info page paragraph style*/
 .infoPageMain p {
 	width: 600px;
 }
 
+/*Pokemon image style*/
 img {
 	margin: 20px;
 	
 	animation: wobble 2s linear infinite;
 }
 
+/*Animation for pokemon images*/
 @keyframes wobble {
 	0% {transform: rotateZ(0);}
 	8% {transform: rotateZ(-10deg);}
