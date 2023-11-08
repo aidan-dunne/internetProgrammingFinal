@@ -157,8 +157,7 @@ footer {
 /*Pokemon info page subsections style*/
 .infoPageBody {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .infoPageMain {
