@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="Default Stylesheet" href="styles.css" media="screen and (min-width:481px)">
+		<link rel="Mobile Stylesheet" href="mobile.css" media="screen and (max-wisth:480px)">
+		<title>Aidan and Alex's Awesome Pokemon Website</title>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to our website!</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="form.html">Form</a>
+			</nav>
+		</header>
+		
+		<br>
+		
+		<section class="centerParagraph">
+			<p>Enter your favorite Pokemon:</p>
+			<br>
+			<form id="favForm">
+				<label for="favPokemonID">Enter Pokemon:</label>
+				<input type="text" name="favPokemon" id="favPokemonID" placeholder="Pokemon" />
+				<br>
+				<input type="submit" id="submitButtonID" />
+				<input type="reset" />
+			</form>
+
+			<div id="FJSONText"></div>
+
+			<script>
+				const JSONText = document.getElementById("FJSONText");
+				JSONText.innerHTML = localStorage.getItem("pokemonJSONInfo");
+				
+				// get the form object
+				const formElement = document.querySelector("#favForm");
+				// add event listener for the submit event
+				formElement.addEventListener("submit", function (e) {
+					const submitButtonDisable = document.getElementById("submitButtonID");
+					submitButtonDisable.disabled = true;
+					// get the Pokémon name
+					let name = document.querySelector("#favPokemonID").value;
+					// if the Pokémon name is empty
+					if (name === "" || name === null) {
+						alert("Enter a Pokémon name");
+						// do not let the submit happen
+						e.preventDefault();
+						submitButtonDisable.disabled = false;
+						return;
+					}
+					
+					const pokemonInfo = { Name: name };
+					let JSONText = JSON.stringify(pokemonInfo);
+					localStorage.setItem("pokemonJSONInfo", JSONText);
+				});
+			</script>
+		</section>
+		
+		<footer>Website created by Aidan Dunne and Alex Switzer, 2023</footer>
+	</body>
+</html>
