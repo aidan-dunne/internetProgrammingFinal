@@ -130,6 +130,11 @@ a.menuItem {
 footer {
 	border-top: 8px solid #144b6b;
 	font-size: 14px;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 /*menu style for info pages*/
