@@ -323,3 +323,86 @@ input {
 	/*Required so that form buttons are the same size when padding/margins are set*/
 	box-sizing: border-box;
 }
+
+/*Shopping cart product styles*/
+.cartProduct {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: solid 8px #42a2db;
+	font-size: 16pt;
+}
+
+.cartProduct p {
+	margin-right: 30px;
+	width: 300px;
+}
+
+.cartProduct img {
+	margin-right: 10px;
+	width: 75px;
+	height: 75px;
+}
+
+/*Shopping cart page button styles*/
+.cartProduct input {
+	width: 300px;
+	height: 40px;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0;
+	margin-top: 20px;
+	margin-right: 30px;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	width: 300px;
+}
+
+.container input {
+	width: 100px;
+}
+
+.buttonContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.buttonContainer input {
+	width: 300px;
+	margin-right: 30px;
+}
+
+/*Remove from Cart button styles*/
+a.remove{
+	background-color: #144b6b;
+	color: seashell;
+	width: 300px;
+	height: 30px;
+	padding: 10px;
+	margin: 0;
+	margin-top: 20px;
+	margin-right: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+a.remove:hover {
+	background-color: #42a2db;
+}
+
+/*Checkout page styles*/
+.checkoutMain {
+	margin-top: 20px;
+}
+
+label {
+	margin-left: 20px;
+}

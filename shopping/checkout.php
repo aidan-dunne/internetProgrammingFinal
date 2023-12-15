@@ -1,11 +1,6 @@
 <?php
 	session_start();
 	
-	//Creating session variable for total number of products in cart if it is not alreay set
-	if (!isset($_SESSION['totalInCart'])) {
-		$_SESSION['totalInCart'] = 0;
-	}
-	
 	//Database connection info
 	$DATABASE_HOST = 'localhost';
 	$DATABASE_USER = 'root';
@@ -23,10 +18,6 @@
 		echo "Database Connection Unsuccessful.<br>";
 		exit('Failed to connect to database!');
 	}
-	
-	//Retrieving all products to be displayed later
-	$statement = $pdo->query('SELECT * FROM products');
-	$products = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -35,12 +26,12 @@
 	<head>
 		<link rel="Mobile Stylesheet" href="../mobile.css" media="screen and (max-width: 480px)">
 		<link rel="Default Stylesheet" href="../styles.css" media="screen and (min-width: 481px)">
-		<title>Store Home</title>
+		<title>Checkout</title>
 	</head>
-
+	
 	<body>
 		<header>
-			<h1>Store</h1>
+			<h1>Checkout</h1>
 			<nav>
 				<a href="../index.html">Home</a>
 				<a href="../form.html">Form</a>
@@ -59,15 +50,11 @@
 			</p>
 		</header>
 		
-		<section class="storePageBody">
-			<?php foreach ($products as $product): ?>
-				<a href="product.php?id=<?= $product['id'] ?>">
-				<figure>
-					<img src="<?= $product['image'] ?>">
-					<figcaption><?= $product['name'] ?></figcaption>
-				</figure>
-				</a>
-			<?php endforeach; ?>
+		<section class="checkoutMain">
+			<form>
+				<label for="cardNum">Credit Card Number: </label>
+				<input type="text" name="cardNum" placeholder="1234-5678-1234-5678" id="cardNum">
+			</form>
 		</section>
 		
 		<footer>Website created by Aidan Dunne and Alex Switzer, 2023</footer>

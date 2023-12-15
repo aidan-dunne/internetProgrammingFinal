@@ -1,8 +1,6 @@
 <?php
 	session_start();
 	
-	$_SESSION["inCart"] = "0";
-	
 	//Database connection info
 	$DATABASE_HOST = 'localhost';
 	$DATABASE_USER = 'root';
@@ -22,8 +20,9 @@
 	}
 	
 	//Retrieving product selected by user
-	//Make sure product id has been specified in the URL
+	//Making sure product id has been specified in the URL
 	if (isset($_GET['id'])) {
+		//Preparing and executing statement to retrieve product from SQL table based on product id
 		$statement = $pdo->prepare('SELECT * FROM products WHERE id = ?');
 		$statement->execute([$_GET['id']]);
 		$product = $statement->fetch(PDO::FETCH_ASSOC);
@@ -65,7 +64,7 @@
 			</a>
 			
 			<p class="cart">
-			<?= $_SESSION["inCart"] ?>
+			<?= $_SESSION['totalInCart'] ?>
 			</p>
 		</header>
 		
@@ -80,7 +79,7 @@
 				<p><strong>Retail Price: </strong>$<?= $product['rrp'] ?></p>
 				<p><strong>Items in Stock: </strong><?= $product['quantity'] ?></p>
 				<form action="cart.php" method="post" class="productForm">
-					<input type="number" name="quantity" value="1" min="1" max="<?= $product['quantity'] ?>" placeholder="Quantity">
+					<input type="number" name="quantity" value="1" min="1" max="<?= $product['quantity'] ?>">
 					<input type="hidden" name="id" value="<?= $product['id'] ?>">
 					<input type="submit" value="Add to Cart">
 				</form>
