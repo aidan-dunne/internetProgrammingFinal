@@ -400,9 +400,28 @@ a.remove:hover {
 
 /*Checkout page styles*/
 .checkoutMain {
-	margin-top: 20px;
+	margin: 20px;
 }
 
-label {
-	margin-left: 20px;
+.checkoutMain form h2 {
+	margin: 30px;
+	margin-left: 0;
+}
+
+.checkoutMain p {
+	padding-bottom: 10px;
+	border-bottom: solid 8px #42a2db;
+}
+
+.checkoutMain form input[type="submit"] {
+	margin-top: 50px;
+	width: 300px;
+}
+
+.checkoutMain form input[type="text"] {
+	width: 300px;
+}
+
+.invalid {
+	background-color: #b0332a;
 }

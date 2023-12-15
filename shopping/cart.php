@@ -149,6 +149,11 @@
 				</section>
 			<?php endforeach; ?>
 			
+			<?php 
+			//Creating a session variable for subtotal for use on the checkout page
+			$_SESSION['subtotal'] = $subtotal;
+			?>
+			
 			<?php
 				if (!empty($_SESSION['cart'])) {
 					echo "<section><p><strong>Subtotal: </strong>$$subtotal</p></section>";

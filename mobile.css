@@ -397,3 +397,27 @@ a.remove{
 a.remove:hover {
 	background-color: #42a2db;
 }
+
+/*Checkout page styles*/
+.checkoutMain {
+	margin: 20px;
+}
+
+.checkoutMain form h2 {
+	margin: 30px;
+	margin-left: 0;
+}
+
+.checkoutMain p {
+	padding-bottom: 10px;
+	border-bottom: solid 8px #42a2db;
+}
+
+.checkoutMain form input[type="submit"] {
+	margin-top: 50px;
+	width: 300px;
+}
+
+.checkoutMain form input[type="text"] {
+	width: 300px;
+}
