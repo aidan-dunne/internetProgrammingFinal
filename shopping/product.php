@@ -54,6 +54,8 @@
 				<a href="../index.html">Home</a>
 				<a href="../form.html">Form</a>
 				<a href="store.php">Store</a>
+				<a href="../create.php">Create Account</a>
+				<a href="../login.php">Login</a>
 			</nav>
 			
 			<a href="cart.php">
@@ -76,7 +78,19 @@
 			</section>
 			
 			<section class="productPageMain">
-				<p><strong>Retail Price: </strong>$<?= $product['rrp'] ?></p>
+				<?php
+					//Storing price and retail price of product to be displayed
+					$price = $product['price'];
+					$rrp = $product['rrp'];
+				
+					//Displaying special member price if user is logged in
+					if (isset($_SESSION['username'])) {
+						echo "<p><strong>Member Price: </strong>$$price</p>";
+					}
+					else {
+						echo "<p><strong>Retail Price: </strong>$$rrp</p>";
+					}
+				?>
 				<p><strong>Items in Stock: </strong><?= $product['quantity'] ?></p>
 				<form action="cart.php" method="post" class="productForm">
 					<input type="number" name="quantity" value="1" min="1" max="<?= $product['quantity'] ?>">

@@ -45,6 +45,8 @@
 				<a href="../index.html">Home</a>
 				<a href="../form.html">Form</a>
 				<a href="store.php">Store</a>
+				<a href="../create.php">Create Account</a>
+				<a href="../login.php">Login</a>
 			</nav>
 			
 			<a href="cart.php">

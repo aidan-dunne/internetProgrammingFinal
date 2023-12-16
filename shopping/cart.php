@@ -106,6 +106,8 @@
 				<a href="../index.html">Home</a>
 				<a href="../form.html">Form</a>
 				<a href="store.php">Store</a>
+				<a href="../create.php">Create Account</a>
+				<a href="../login.php">Login</a>
 			</nav>
 			
 			<a href="cart.php">
@@ -135,16 +137,43 @@
 					$cartProduct = $statement->fetch(PDO::FETCH_ASSOC);
 					
 					//Calculating subtotal
-					$subtotal += $_SESSION['cart'][$key] * $cartProduct['rrp'];
+					if (isset($_SESSION['username'])) {
+						//Calculate subtotal using member price if user is logged in
+						$subtotal += $_SESSION['cart'][$key] * $cartProduct['price'];
+					}
+					else {
+						//Otherwise calculate using retail price
+						$subtotal += $_SESSION['cart'][$key] * $cartProduct['rrp'];
+					}
 				?>
 				
 				<section class="cartProduct">
 					<section class="container"><img src="<?= $cartProduct['image'] ?>"><p><strong><?= $cartProduct['name'] ?></strong></p></section>
-					<p>Price: $<?= $cartProduct['rrp'] ?></p>
+					<p>Price: $
+						<?php
+							//Displaying member price if user is logged in, retail price otherwise
+							if (isset($_SESSION['username'])) {
+								echo $cartProduct['price'];
+							}
+							else {
+								echo $cartProduct['rrp'];
+							}
+						?>
+					</p>
 					
 					<section class="container"><p>Quantity: </p><input type="number" name="quantity-<?= $key ?>" value="<?= $_SESSION['cart'][$key] ?>" min="1" max="<?= $cartProduct['quantity'] ?>"></section>
 					
-					<p>Total Price: $<?= $cartProduct['rrp'] * $_SESSION['cart'][$key] ?></p>
+					<p>Total Price: $
+						<?php
+							//Calculating total price per item using member price if user is logged in, retail price otherwise
+							if (isset($_SESSION['username'])) {
+								echo $cartProduct['price'] * $_SESSION['cart'][$key]; 
+							}
+							else {
+								echo $cartProduct['rrp'] * $_SESSION['cart'][$key]; 
+							}
+						?>
+					</p>
 					<a href="cart.php?remove=<?= $key ?>" class="remove">Remove from Cart</a>
 				</section>
 			<?php endforeach; ?>

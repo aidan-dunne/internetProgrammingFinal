@@ -3,7 +3,7 @@
 //Database connection info
 	$DATABASE_HOST = 'localhost';
 	$DATABASE_USER = 'root';
-	$DATABASE_PASS = '';
+	$DATABASE_PASS = 'root';
 	$DATABASE_NAME = 'accounts';
 	
 	//Connecting to the shoppingcart database
@@ -25,11 +25,19 @@
 		$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 		$result = $pdo->query($sql); // committing the query
 		if ($result->rowCount() > 0) {
-			echo "Login successful!";
+			echo <<< MULTILINE
+				<script>
+					alert("Login successful!");
+				</script>
+			MULTILINE;
 			$_SESSION['username'] = $username;
 		} 
 		else {
-			echo "Login failed. Please check your username and password.";
+			echo <<< MULTILINE
+				<script>
+					alert("Login failed! Please check your username and password.");
+				</script>
+			MULTILINE;
 }
 	}}}
 	// closing the connection object
@@ -62,18 +70,14 @@
 					<input type="text" name="uname" placeholder="User Name"><br>
 					<label>Password</label>
 					<input type="password" name="password" placeholder="Password"><br> 
-					<button type="submit">Login</button>
+					<input type="submit" value="Login">
 				</form>
 			<br>
 			<p>Don't have an account? Create one here!<p>
-			<a href="create.php">
-				<button type="button" onclick="create.php">Create Account</button>
-			</a>
+			<form action="create.php"><input type="submit" value="Create Account"></form>
 			<br>
 			<p>Back to Menu<p>
-			<a href="index.html">
-				<button type="button" onclick="index.html">Menu</button>
-			</a>
+			<form action="index.html"><input type="submit" value="Menu"></form>
 		</section>
 		
 		<footer>Website created by Aidan Dunne and Alex Switzer, 2023</footer>

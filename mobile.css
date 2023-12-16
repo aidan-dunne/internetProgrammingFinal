@@ -300,7 +300,7 @@ p.cart {
 }
 
 /*Generic form styles*/
-input[type="number"], input[type="text"] {
+input[type="number"], input[type="text"], input[type="password"] {
 	background-color: #42a2db;
 }
 

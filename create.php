@@ -2,7 +2,7 @@
 //Database connection info
 	$DATABASE_HOST = 'localhost';
 	$DATABASE_USER = 'root';
-	$DATABASE_PASS = '';
+	$DATABASE_PASS = 'root';
 	$DATABASE_NAME = 'accounts';
 	
 	//Connecting to the shoppingcart database
@@ -21,7 +21,7 @@
         $username = $_POST['uname'];
         $password = $_POST['password'];
 	{
-		$sql = "INSERT INTO users VALUES ('$username', '$password')";
+		$sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 		$result = $pdo->query($sql); // committing the query
 	}}}
 // closing the connection object
@@ -53,11 +53,9 @@ $pdo = null;
 					<input type="text" name="uname" placeholder="User Name"><br>
 					<label>Password</label>
 					<input type="password" name="password" placeholder="Password"><br>
-						<button type="submit">Create Account</button>
+					<input type="submit" value ="Create Account">
 				</form>
-			<br>
-			<a href="login.php">
-				<button>Back to Login</button>
+			<form action="login.php"><input type="submit" value="Back to Login"></form>
 			</a>
 		</section>
 		

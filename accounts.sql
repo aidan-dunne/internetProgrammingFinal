@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `accounts`
 --
+CREATE DATABASE accounts;
+USE accounts;
+
 
 -- --------------------------------------------------------
 
@@ -31,7 +34,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 
 --
 -- Dumping data for table `users`
@@ -50,7 +53,7 @@ DROP TABLE IF EXISTS `user_cards`;
 CREATE TABLE IF NOT EXISTS `user_cards` (
   `username` varchar(20) NOT NULL,
   `card_info` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
