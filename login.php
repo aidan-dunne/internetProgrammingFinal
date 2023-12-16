@@ -1,5 +1,5 @@
 <?php
-	start_session();
+	session_start();
 //Database connection info
 	$DATABASE_HOST = 'localhost';
 	$DATABASE_USER = 'root';
@@ -68,6 +68,11 @@
 			<p>Don't have an account? Create one here!<p>
 			<a href="create.php">
 				<button type="button" onclick="create.php">Create Account</button>
+			</a>
+			<br>
+			<p>Back to Menu<p>
+			<a href="index.html">
+				<button type="button" onclick="index.html">Menu</button>
 			</a>
 		</section>
 		
